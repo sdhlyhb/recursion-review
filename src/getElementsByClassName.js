@@ -7,4 +7,22 @@
 var getElementsByClassName = function(className
 ) {
   // your code here
+  var res = [];
+  var body = document.body;
+  //helper function
+  var traverse = function (node) {
+    if (node.classList && node.classList.contains(className) ) {
+      res.push(node);
+    }
+    if (node.children) {
+      node.children.forEach (function(node) {
+        traverse(node);
+      });
+    }
+  };
+
+  traverse(body);
+  return res;
+
+
 };
