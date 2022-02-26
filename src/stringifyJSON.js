@@ -37,16 +37,16 @@ var stringifyJSON = function(obj) {
       return '{}';
     } else {
       result += '{';
-      for (var i = 0; i < keys.length; i++) {
-        var value = obj[keys[i]];
-        if (i < keys.length - 1) {
+      for (var j = 0; j < keys.length; j++) {
+        var value = obj[keys[j]];
+        if (j < keys.length - 1) {
 
           if (typeof value === 'function' || value === undefined) {
             return '{}';
           }
-          result += '"' + keys[i] + '"' + ':' + stringifyJSON(value) + ',';
+          result += '"' + keys[j] + '"' + ':' + stringifyJSON(value) + ',';
         } else {
-          result += '"' + keys[i] + '"' + ':' + stringifyJSON(value);
+          result += '"' + keys[j] + '"' + ':' + stringifyJSON(value);
         }
       } result += '}';
     }

@@ -14,8 +14,8 @@ var getElementsByClassName = function(className
     if (node.classList && node.classList.contains(className) ) {
       res.push(node);
     }
-    if (node.children) {
-      node.children.forEach (function(node) {
+    if (node.childNodes) {
+      node.childNodes.forEach (function(node) {
         traverse(node);
       });
     }
